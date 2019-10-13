@@ -7,7 +7,7 @@ $(document).ready(() => {
 });
 
 function getMovies(searchText){
-    axios.get('http://www.omdbapi.com?s='+searchText+'&apikey=13596254') //return promise
+    axios.get('https://www.omdbapi.com?s='+searchText+'&apikey=13596254') //return promise
         .then((response) => {
             console.log(response);
             let movies = response.data.Search;
@@ -40,7 +40,7 @@ function movieSelected(id){
 function getMovie(){
     let movieId = sessionStorage.getItem('movieId');
 
-    axios.get('http://www.omdbapi.com?i='+movieId+'&apikey=13596254') //return promise
+    axios.get('https://www.omdbapi.com?i='+movieId+'&apikey=13596254') //return promise
         .then((response) => {
             console.log(response);
             let movie = response.data;
@@ -68,7 +68,7 @@ function getMovie(){
                         <h3>Plot</h3>
                         <p style="color: white">${movie.Plot}</p>
                         <hr>
-                        <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
+                        <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
                         <a href="index.html" class="btn btn-warning">Go Back to Search</a>
                     </div>
                 </div>
